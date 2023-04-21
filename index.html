@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="Shortcut Icon" href="./img/草莓.svg" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS效果展示</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    .Box{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        overflow-x: hidden;
+    }
+      /* 定义滚动条样式 */
+      .Box::-webkit-scrollbar {
+    width: 5px;
+    height: 6px;
+    background-color: rgba(240, 240, 240, 0.1);
+  }
+  /*定义滚动条轨道 内阴影+圆角*/
+  .Box::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 0px rgba(240, 240, 240, .5);
+    border-radius: 10px;
+    background-color: rgba(240, 240, 240, .5);
+  }
+  /*定义滑块 内阴影+圆角*/
+  .Box::-webkit-scrollbar-thumb {
+    border-radius: 18px !important;
+    box-shadow: inset 0 0 0px rgba(240, 240, 240, .5) !important;
+    background-color: rgba(72, 148, 198, 0.2 );
+  }
+    .frame{
+        width: 50%;
+        height: 90%;
+        
+    }
+    iframe{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+<body>
+    <div class="Box">
+        
+        <div class="frame"><iframe src="./04_map图标动画.html" frameborder="0"></iframe></div>
+        <div class="frame"><iframe src="./05_消失的信息框.html" frameborder="0"></iframe></div>
+        <div class="frame"><iframe src="./07_加载动态.html" frameborder="0"></iframe></div>
+        <div class="frame"><iframe src="./08_动态音效铃铛.html" frameborder="0"></iframe></div>
+        <div class="frame"><iframe src="./09_动态流动线条.html" frameborder="0"></iframe></div>
+        <div class="frame"><iframe src="./10_计数器.html" frameborder="0"></iframe></div>
+        <div class="frame"><iframe src="./12_面包屑效果.html" frameborder="0"></iframe></div>
+        <div class="frame"><iframe src="./13_动态轮播.html" frameborder="0"></iframe></div>
+        <div class="frame"><iframe src="./14_文字行显示.html" frameborder="0"></iframe></div>
+        <div class="frame"><iframe src="./01_train.html" frameborder="0" ></iframe></div>
+        <div class="frame"><iframe src="./02_点击按钮效果.html" frameborder="0" ></iframe></div>
+        <div class="frame"><iframe src="./03_按钮效果.html" frameborder="0"></iframe></div>
+        <div class="frame"><iframe src="./16_警告弹窗.html" frameborder="0"></iframe></div>
+        <div class="frame"><iframe src="./18_发光灯泡.html" frameborder="0"></iframe></div>
+	  <div class="frame"><iframe src="./06_todoList.html" frameborder="0"></iframe></div>
+        <div class="frame"><iframe src="./17_爱心跳动.html" frameborder="0"></iframe></div>
+        <div class="frame"><iframe src="./15_照片墙.html" frameborder="0"></iframe></div>
+        <div class="frame"><iframe src="./11_晴空万里.html" frameborder="0"></iframe></div>
+        
+    </div>
+</body>
+</html>

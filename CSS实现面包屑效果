@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    body{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    .Box{
+        width: 500px;
+        height: 500px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to right,#a4dbff 0%,#fff89d);
+    }
+    .frame{
+        width: 380px;
+        height: 280px;
+        position: relative;
+        background-color: azure;
+    }
+    .header{
+        width: 100%;
+        height: 18%;
+        background-color: rgb(253, 210, 210);
+    }
+    .ul{
+        display: flex;
+        list-style: none;
+    }
+    .li{
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .Sli{
+        width: 50px;
+        height: 50px;
+        /* background-color: aqua; */
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        right: 0;
+    }
+    span{
+        font-weight: bold;
+        color: #458ebe;
+        cursor: default;
+        
+    }
+    span:hover{
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #f7554c;
+        animation: active .5s;
+    }
+    .count{
+        width: 100%;
+        height: 82%;
+        position: absolute;
+        background-color: #fff0f0;
+    }
+    .small{
+        font-weight: bolder;
+        font-size: 24px;
+        color: #a8a8a7;
+        padding-left: 5%;
+        padding-top: 5%;
+    }
+    .Csmall{
+        font-weight: lighter;
+        font-size:medium;
+        color: #a8a8a7;
+        padding-left: 5%;
+        text-align: center;
+    }
+    .foot{
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    #first{
+        display: block;
+        animation: F 1s linear;
+        
+    }
+    #music{
+        display: none;
+        animation: F 1s linear;
+    }
+    #video{
+        display: none;
+        animation: F 1s linear;
+    }
+    #mv{
+        display: none;
+        animation: F 1s linear;
+    }
+    @keyframes active{
+        0%{
+            opacity: 0;
+            transform: scale(.5);
+        }
+        100%{
+            opacity: 0.6;
+            transform: scale(1.2);
+        }
+    }
+    @keyframes F{
+        0%{
+            opacity: 0;
+        }
+        50%{
+            opacity: .3;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+</style>
+<body>
+    <div class="Box">
+        <div class="frame">
+            <div class="header">
+                <table >
+                    <ul class="ul">
+                        <li class="li"><span>首页</span></li>
+                        <li class="li"><span>音乐</span></li>
+                        <li class="li"><span>视频</span></li>
+                        <li class="li"><span>MV</span></li>
+                        <li class="Sli"><span>搜索</span></li>
+                    </ul>
+                </table>
+            </div>
+
+            <div class="foot">
+            <div class="count" id="first">
+                <div class="small">DashBoard</div>
+                <div class="Csmall" >首页</div>
+            </div>
+            <div class="count" id="music">
+                <div class="small">MUSIC</div>
+                <div class="Csmall">音乐</div>
+            </div>
+            <div class="count" id="video">
+                <div class="small">VIDEO</div>
+                <div class="Csmall">视频</div>
+            </div>
+            <div class="count" id="mv">
+                <div class="small">MV</div>
+                <div class="Csmall">MV</div>
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+<script>
+    let li= document.querySelectorAll('.li')
+    let first = document.getElementById('first')
+    let music = document.getElementById('music')
+    let video = document.getElementById('video')
+    let mv = document.getElementById('mv')
+    for(let i = 0;i<li.length;i++){
+        li[i].addEventListener('click',()=>{
+            if(i===0){
+                first.style.display='block'
+                li[i].style['background-color']=' rgb(255, 201, 86)'
+                music.style.display='none'
+                video.style.display='none'
+                mv.style.display='none'
+                li[3].style.removeProperty("background-color");
+                li[1].style.removeProperty("background-color");
+                li[2].style.removeProperty("background-color");
+            }else if(i===1){
+                li[i].style['background-color']=' rgb(255, 201, 86)'
+                first.style.display='none'
+                music.style.display='block'
+                video.style.display='none'
+                mv.style.display='none'
+                li[0].style.removeProperty("background-color");
+                li[3].style.removeProperty("background-color");
+                li[2].style.removeProperty("background-color");
+            }
+            else if(i===2){
+                li[i].style['background-color']=' rgb(255, 201, 86)'
+                first.style.display='none'
+                music.style.display='none'
+                video.style.display='block'
+                mv.style.display='none'
+                li[0].style.removeProperty("background-color");
+                li[1].style.removeProperty("background-color");
+                li[3].style.removeProperty("background-color");
+            }
+            else if(i===3){
+                li[i].style['background-color']=' rgb(255, 201, 86)'
+                first.style.display='none'
+                music.style.display='none'
+                video.style.display='none'
+                mv.style.display='block'
+                li[0].style.removeProperty("background-color");
+                li[1].style.removeProperty("background-color");
+                li[2].style.removeProperty("background-color");
+            }
+            
+
+        })
+    }
+</script>
+</html>

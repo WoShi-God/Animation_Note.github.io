@@ -1,0 +1,61 @@
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    body{
+        text-align: center;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .Box{
+        width: 400px;
+        height: 400px;
+        border: solid 1px rgb(0, 53, 106);
+    }
+    .spot{
+        width: 100px;
+        height: 100px;
+        background-color: rgb(241, 224, 94);
+        animation-name: run;
+        /* 该时间可以设置好几个，与上面名字一一对应如
+        animation-name:run1,run2,run3;
+        animation-duration:5s,3s,1s;
+        分别在5s里执行5s，3s和1s动画，但会出现属性层叠
+        run3覆盖run2覆盖run1
+        */
+        animation-duration: 4s;
+        /* infinite无限重复执行，想执行几次都可设置 */
+        animation-iteration-count: infinite;
+    }
+    @keyframes run{
+        /* 0%,和100%在这可以不写，因需要回到原点 */
+        25%{
+            transform: translateX(300px);
+            /* transform:scale();是缩放属性 */
+        }
+        50%{
+            transform: translate(300px,300px);
+            border-radius: 0;
+            background-color: rgb(245, 227, 93);
+        }
+        75%{
+            transform: translateY(300px);
+            
+        }
+        /*共同样式可以合并一起 */
+        25%,75%{
+            border-radius: 100px;
+            background-color: rgb(217, 151, 232);
+        }
+        
+    }
+</style>
+<body>
+    <div class="Box">
+        <div class="spot"></div>
+    </div>
+</body>

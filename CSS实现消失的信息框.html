@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    .Box {
+        width: 500px;
+        height: 500px;
+        position: absolute;
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to right, #bde7f2 0%, #b2f2d8 100%);
+    }
+
+    .card_01 {
+        width: 230px;
+        height: 150px;
+        background-color: #f8f7f7;
+        position: relative;
+        cursor: default;
+        /* animation-name: OutRun;
+        animation-duration: 2s */
+    }
+    .card_02 {
+        width: 230px;
+        height: 150px;
+        background-color: #f8f7f7;
+        position: relative;
+        display: none;
+        cursor: default;
+    }
+    .card_03 {
+        width: 230px;
+        height: 150px;
+        background-color: #f8f7f7;
+        position: relative;
+        display: none;
+        cursor: default;
+    }
+    @keyframes OutRun {
+        90%{
+            transform: scale(1.5);
+            opacity: 0;
+        }
+        100%{
+            opacity: 0;
+            display: none;
+        }
+        
+    }
+    @keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: scale(0.9);		
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+
+    .card_R {
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        border-right: 35px solid transparent;
+        border-left: 35px solid transparent;
+        border-bottom: 35px solid  rgb(131, 145, 161);
+        right: -22px;
+        top: -5px;
+        transform: rotate(45deg);
+    }
+    .Font{
+        position: absolute;
+        right: 10px;
+        top: 3px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #ffff;
+        z-index: 2;
+    }
+    .tab{
+        width: 230px;
+        height: 150px;
+    }
+    .tab_ul{
+        list-style: none;
+        width: 230px;
+        padding-top: 30px;
+        text-align: center;
+    }
+    .tab_ul li{
+        width: 230px;
+        height: 40px;
+        color: #6e6e6e;
+    }
+    .Bt_0{
+        background-color: rgb(60, 167, 251);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffff !important;
+    }
+    .Bt_1{
+        background-color: rgb(60, 167, 251);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffff !important;
+    }
+    .Bt_2{
+        background-color: rgb(60, 167, 251);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffff !important;
+    }
+</style>
+    
+<body>
+    <div class="Box">
+        <div class="card_01">
+            <span class="Font">1</span>
+            <div class="card_R"></div>
+            <table class="tab">
+                <ul class="tab_ul">
+                    <li>通知</li>
+                    <li>如果想要飞升，请修仙！</li>
+                    <li class="Bt_0" id="Bt_0">确定</li>
+                </ul>
+            </table>
+        </div>
+
+        <div class="card_02">
+            <span class="Font">2</span>
+            <div class="card_R"></div>
+            <table class="tab">
+                <ul class="tab_ul">
+                    <li>通知</li>
+                    <li>如果想要当大侠，请习武！</li>
+                    <li class="Bt_1" id="Bt_1">确定</li>
+                </ul>
+            </table>
+        </div>
+
+        <div class="card_03">
+            <span class="Font">3</span>
+            <div class="card_R"></div>
+            <table class="tab">
+                <ul class="tab_ul">
+                    <li>通知</li>
+                    <li>如果想学主角，请掉落悬崖！</li>
+                    <li class="Bt_2" id="Bt_2">确定</li>
+                </ul>
+            </table>
+        </div>
+
+    </div>
+</body>
+<script>
+    let card_01 = document.querySelector('.card_01');
+    let card_02 = document.querySelector('.card_02');
+    let card_03 = document.querySelector('.card_03');
+    let BT_0 = document.querySelector('#Bt_0');
+    let BT_1 = document.querySelector('#Bt_1');
+    let BT_2 = document.querySelector('#Bt_2');
+    Bt_0.addEventListener('click',()=>{
+        
+        card_01.style['animation-name']='OutRun'
+        card_01.style['animation-duration']='2s'
+        card_02.style['animation-name']='fadeIn'
+        card_02.style['animation-duration']='2s'
+        card_01.style.display='none'
+        card_02.style.display='block'
+    })
+    Bt_1.addEventListener('click',()=>{
+        
+        card_02.style['animation-name']='OutRun'
+        card_02.style['animation-duration']='2s'
+        card_03.style['animation-name']='fadeIn'
+        card_03.style['animation-duration']='2s'
+        card_02.style.display='none'
+        card_03.style.display='block'
+    })
+    Bt_2.addEventListener('click',()=>{
+        
+        card_03.style['animation-name']='OutRun'
+        card_03.style['animation-duration']='2s'
+        card_01.style['animation-name']='fadeIn'
+        card_01.style['animation-duration']='2s'
+        card_03.style.display='none'
+        card_01.style.display='block'
+    })
+</script>
+</html>

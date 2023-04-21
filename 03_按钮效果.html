@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:600,300);
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* // use only the available space inside the 400x400 frame */
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: #57D895;
+            color: #333;
+            font-family: 'Open Sans', Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .center {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #cb {
+            display: none;
+            position: absolute;
+        }
+
+        .btn {
+            position: absolute;
+            width: 260px;
+            height: 60px;
+            border-radius: 60px;
+            font-size: 20px;
+            font-weight: 600;
+            text-align: center;
+            line-height: 56px;
+            letter-spacing: .1rem;
+            border: solid white 3px;
+            color: white;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+
+            
+        }
+        img {
+                position: absolute;
+                z-index: 2;
+                top: 16px;
+                left: 15px;
+                opacity: 0;
+            }
+        .btn:hover {
+            background: #37BE77;
+        }
+
+        .spinner {
+            width: 60px;
+            height: 60px;
+            z-index: 2;
+            stroke: #fff;
+            stroke-width: 2;
+            fill: none;
+            stroke-linecap: round;
+            stroke-dasharray: 183;
+            stroke-dashoffset: 183;
+            pointer-events: none;
+            transform: rotate(-90deg);
+        }
+        #cb:checked~.btn {
+            animation: btnani .5s ease both, fill .5s ease-out 1.5s forwards;
+        }
+        img {
+                animation: check .5s ease-out 1.5s both;
+            }
+        #cb:checked~.spinner {
+            animation: spinnerani 2s ease-out .5s both;
+        }
+        /* 帧动画，在@keyframes 后面是加的任意名字，
+        该帧动画需哪个物体移动就放在哪   使用是animation-name:''进行使用
+        animation-duration:2s; 这个表示运动的时间，如果无时间无法使用
+        */
+        @keyframes btnani {
+            /* 0%是开始位置，使用from也一样，为便于方便定义时间段动作 */
+            0% {
+                width: 260px;
+                border-color: #fff;
+                color: #fff;
+            }
+
+            50% {
+                color: transparent;
+            }
+            /* 结束位置，使用to也一样 */
+            100% {
+                width: 60px;
+                border-color: #45B078;
+                background: transparent;
+                color: transparent;
+            }
+        }
+        @keyframes spinnerani {
+            0% {
+                stroke-dashoffset: 183;
+            }
+
+            50% {
+                stroke-dashoffset: 0;
+                stroke-dasharray: 183;
+                transform: rotate(-90deg) scale(1);
+                opacity: 1;
+            }
+
+            90%,
+            100% {
+                stroke-dasharray: 500 500;
+                transform: rotate(-90deg) scale(2);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fill {
+            0% {
+                background: transparent;
+                border-color: #fff;
+            }
+
+            100% {
+                background: #fff;
+            }
+        }
+
+        @keyframes check {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="center">
+            <input type="checkbox" id="cb">
+            <label for="cb" class="btn">FINISH<img src="https://100dayscss.com/codepen/checkmark-green.svg" /></label>
+            <svg class="spinner">
+                <circle cx="30" cy="30" r="29" />
+            </svg>
+        </div>
+    </div>
+</body>
+<script>
+
+</script>
+
+</html>

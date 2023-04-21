@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAP</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        position: relative;
+        text-align: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+    }
+
+    .frame {
+        width: 500px;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        background: linear-gradient(to right, #f2ffc7 0%, #c9ebfb 100%);
+    }
+
+    .map {
+        position: absolute;
+        line-height: 500px;
+    }
+    .Svg{
+        animation-name: Run;
+        animation-duration: 3s ;
+        animation-iteration-count: infinite;
+    }
+    @keyframes Run{
+        0%{
+            transform: translateY(0px);
+        }
+        50%{
+            transform: translateY(10px);
+        }
+        100%{
+            transform: translateY(0px);
+        }
+    }
+
+    .shadow {
+        width: 22px;
+        height: 3px;
+        background-color: rgb(11, 11, 11, 0.3);
+        position: absolute;
+        left: 13px;
+        top: 268px;
+        border-radius: 50% / 50%;
+        animation-name: shadow;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+    }
+    @keyframes shadow {
+        50%{
+            transform: scale(2);
+        }
+    }
+    .card {
+        width: 230px;
+        height: 150px;
+        position: absolute;
+        top: 280px;
+        display: none;
+        background:linear-gradient(to right,#fbe4c9 0% ,#ccfbc9 100%);
+    }
+    .BT {
+        width: 230px;
+        height: 150px;
+        display: flex;
+        position: absolute;
+        top: 0;
+    }
+
+    .IMG {
+        width: 230px;
+        height: 50px;
+    }
+    .bt1{
+        width: 115px;
+        height: 40px;
+        position: absolute;
+        bottom: 0;
+        line-height: 40px;
+        background-color: rgb(241, 240, 240) ;
+        text-align: center;
+        border-radius: 16px;
+        cursor:default;
+    }
+    .bt2{
+        width: 115px;
+        height: 40px;
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        line-height: 40px;
+        right: 0;
+        background-color: rgb(241, 240, 240);
+        border-radius: 16px;
+        cursor:default;
+    }
+    .message{
+        position: absolute;
+        width: 230px;
+        line-height: 150px;
+        font-weight: 24px;
+        font-weight: bold;
+        color: rgb(87, 87, 88);
+        cursor:default;
+    }
+    a{
+        text-decoration: none;
+        color:rgb(87, 87, 88);
+    }
+</style>
+
+<body>
+    <div class="frame">
+        <div class="map">
+            <svg width="48px" height="72px" viewBox="0 0 48 72" class="Svg">
+                <path
+                    d="M24,0 C11.406,0 0,10.209 0,22.806 C0,35.4 10.407,50.436 24,72 C37.593,50.436 48,35.4 48,22.806 C48,10.209 36.597,0 24,0 L24,0 Z M24,33 C19.029,33 15,28.971 15,24 C15,19.029 19.029,15 24,15 C28.971,15 33,19.029 33,24 C33,28.971 28.971,33 24,33 L24,33 Z">
+                </path>
+            </svg>
+            <div class="shadow"></div>
+        </div>
+        <div class="card">
+            <img src="https://100dayscss.com/codepen/surfshop.jpg" class="IMG" />
+            <div class="BT">
+                <span class="message">想查询吗？</span>
+                <div class="bt1"><a href="#">取消</a></div>
+                <div class="bt2"><a href="#">查询</a></div>
+            </div>
+            </table>
+
+        </div>
+    </div>
+    </div>
+</body>
+<script>
+    let card = document.querySelector('.card');
+    let map = document.querySelector('.map');
+    let Svg = document.querySelector('.Svg');
+    let Bt1 = document.querySelector('.bt1');
+    let Bt2 = document.querySelector('.bt2');
+    Svg.addEventListener('click',()=>{
+        map.style.display='none';
+        card.style.display = 'block';
+    })
+    Bt1.addEventListener('click',()=>{
+        map.style.display = 'block'
+        card.style.display = 'none'
+    })
+    Bt2.addEventListener('click',()=>{
+        map.style.display = 'block'
+        card.style.display = 'none'
+    })
+</script>
+</html>

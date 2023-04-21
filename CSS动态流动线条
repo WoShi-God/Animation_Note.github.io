@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .Box {
+        width: 500px;
+        height: 500px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to right, #c2f3f5 0%, #d7eecd 100%);
+    }
+
+    .circle {
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        border: 4px solid #fff;
+        animation-name: smoke;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+
+    .line {
+        position: absolute;
+        top: 170px;
+        fill: none;
+        stroke: #fff;
+        stroke-width: 2px;
+        stroke-linecap: round;
+        /*使得路径的末端更加平滑，不会出现尖锐的边缘*/
+        animation: line 2s linear infinite;
+    }
+
+    .svg-1 {
+        transform: rotate(90deg);
+        /* 垂直向下的 */
+    }
+
+    .svg-2 {
+        transform: rotate(-90deg);
+    }
+
+    .svg-3 {
+        transform: rotate(0deg);
+    }
+
+    .svg-4 {
+        /* 从右到左的 */
+        transform: rotate(180deg);
+    }
+
+    @keyframes line {
+        from {
+            stroke-dasharray: 50 660;
+            /* 线段长度为50px ,跳过660px的空间 
+            如此反复，直到描绘完整个路径。
+            表示每条虚线或点线的长度和间隔*/
+            stroke-dashoffset: 780;
+            /* 偏移量780  
+            表示虚线或点线的起始点与路径起点之间的距离为780px
+            */
+        }
+
+        to {
+            stroke-dasharray: 50 660;
+            stroke-dashoffset: 70;
+        }
+    }
+
+    @keyframes smoke {
+
+        0%,
+        40% {
+            opacity: 1;
+            transform: scale(0);
+        }
+
+        80%,
+        100% {
+            opacity: 0;
+            transform: scale(2);
+        }
+    }
+</style>
+
+<body>
+    <div class="Box">
+        <div class="circle"></div>
+        <!-- 设置两个类line、svg-1 -->
+        <svg width="500px" height="165px" viewBox="0 0 400 65" class="line svg-1">
+            <path d="M0,4.67941475 C0,4.67941475 42.5049504,21.0558251 95.0896109,21.0558243 
+                C147.674271,21.0558235 149.896403,2 196.011077,2 
+                C242.125751,2 242.386923,58.3217419 200.000004,58.3217392 
+                C157.613085,58.3217365 163.18433,13.5133498 212.755329,13.5133498 
+                C262.326328,13.5133498 284.162205,38.9236796 335.140774,38.9236794 
+                C386.119343,38.9236791 399.999996,30.1608696 399.999996,30.1608696">
+            </path>
+        </svg>
+        <svg width="500px" height="165px" viewBox="0 0 400 65" class="line svg-2">
+            <path d="M0,4.67941475 C0,4.67941475 42.5049504,21.0558251 95.0896109,21.0558243 
+                C147.674271,21.0558235 149.896403,2 196.011077,2 
+                C242.125751,2 242.386923,58.3217419 200.000004,58.3217392 
+                C157.613085,58.3217365 163.18433,13.5133498 212.755329,13.5133498 
+                C262.326328,13.5133498 284.162205,38.9236796 335.140774,38.9236794 
+                C386.119343,38.9236791 399.999996,30.1608696 399.999996,30.1608696">
+            </path>
+        </svg>
+        <svg width="500px" height="165px" viewBox="0 0 400 65" class="line svg-3">
+            <path d="M0,4.67941475 C0,4.67941475 42.5049504,21.0558251 95.0896109,21.0558243 
+                C147.674271,21.0558235 149.896403,2 196.011077,2 
+                C242.125751,2 242.386923,58.3217419 200.000004,58.3217392 
+                C157.613085,58.3217365 163.18433,13.5133498 212.755329,13.5133498 
+                C262.326328,13.5133498 284.162205,38.9236796 335.140774,38.9236794 
+                C386.119343,38.9236791 399.999996,30.1608696 399.999996,30.1608696">
+            </path>
+        </svg>
+        <svg width="500px" height="165px" viewBox="0 0 400 65" class="line svg-4">
+            <path d="M0,4.67941475 C0,4.67941475 42.5049504,21.0558251 95.0896109,21.0558243 
+                C147.674271,21.0558235 149.896403,2 196.011077,2 
+                C242.125751,2 242.386923,58.3217419 200.000004,58.3217392 
+                C157.613085,58.3217365 163.18433,13.5133498 212.755329,13.5133498 
+                C262.326328,13.5133498 284.162205,38.9236796 335.140774,38.9236794 
+                C386.119343,38.9236791 399.999996,30.1608696 399.999996,30.1608696">
+            </path>
+        </svg>
+    </div>
+</body>
+
+</html>

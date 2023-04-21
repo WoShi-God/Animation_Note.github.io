@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    body{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    .Frame{
+        width: 500px;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: azure;
+    }
+    .box{
+        width: 260px;
+        height: 180px;
+        position: relative;
+        background-color: #f3f3f3;
+    }
+    @keyframes active{
+        0%{
+            opacity: 1;
+            transform: scale(1);
+        }
+        100%{
+            opacity: 0;
+            transform: scale(0);
+        }
+    }
+    .Font{
+        position: absolute;
+        top:15%;
+        text-align: center;
+        left: 18%;
+        cursor: default;
+    }
+    .bt{
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        width: 260px;
+        height: 40px;
+        line-height: 40px;
+        cursor: default;
+        background-color: rgb(203, 80, 80);
+    }
+    .bt:hover{
+        background-color: brown;
+    }
+    h1{
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: rgb(255, 0, 0);
+    }
+    h2{
+        color: white;
+        font-weight: normal;
+    }
+    h3{
+        color: rgb(153, 153, 153);
+    }
+</style>
+<body>
+    <div class="Frame">
+        <div class="box">
+            <div class="Font">
+                <h1>警告</h1>
+                <h3>有一个错误正在发生</h3>
+            </div>
+            <div class="bt"><h2>确定</h2></div>
+        </div>
+    </div>
+</body>
+<script>
+    let bt =document.querySelector('.bt');
+    let box = document.querySelector('.box');
+    bt.addEventListener('click',()=>{
+        box.style['animation']='active 2s forwards'
+    })
+</script>
+</html>

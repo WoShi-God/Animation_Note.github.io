@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .Box {
+        width: 500px;
+        height: 500px;
+        position: relative;
+        background: linear-gradient(to right, #a3e9e4 0%, #a0def1 100%);
+    }
+
+    .small_box {
+        width: 80px;
+        height: 100px;
+        position: absolute;
+        top: 210px;
+        left: 220px;
+        position: relative;
+        animation-name: active;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes active {
+        0% {
+            transform: rotate(5deg);
+        }
+
+        5% {
+            transform: rotate(-5deg);
+        }
+
+        10% {
+            transform: rotate(5deg);
+        }
+
+        15% {
+            transform: rotate(-5deg);
+        }
+
+        20% {
+            transform: rotate(5deg);
+        }
+
+        25% {
+            transform: rotate(-5deg);
+        }
+
+        30% {
+            transform: rotate(5deg);
+        }
+
+        35% {
+            transform: rotate(-5deg);
+        }
+
+        40% {
+            transform: rotate(5deg);
+        }
+
+        45% {
+            transform: rotate(-5deg);
+        }
+
+        50% {
+            transform: rotate(5deg);
+        }
+
+        55% {
+            transform: rotate(-5deg);
+        }
+
+        60% {
+            transform: rotate(5deg);
+        }
+
+        65% {
+            transform: rotate(-5deg);
+        }
+
+        70% {
+            transform: rotate(5deg);
+        }
+
+        75% {
+            transform: rotate(-0deg);
+        }
+
+        80% {
+            transform: rotate(0deg);
+        }
+
+        85% {
+            transform: rotate(-0deg);
+        }
+
+        90% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+    
+
+    .box_header {
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        background-color: aliceblue;
+        position: absolute;
+        top: 10px;
+        left: 30px;
+    }
+
+    .box_body {
+        width: 50px;
+        height: 50px;
+        background-color: aliceblue;
+        position: absolute;
+        left: 15px;
+        top: 20px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .box_body_bt {
+        width: 80px;
+        height: 20px;
+        background-color: aliceblue;
+        position: absolute;
+        top: 70px;
+        border-top-left-radius: 18px;
+        border-top-right-radius: 18px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+
+    .box_bottom {
+        width: 20px;
+        height: 20px;
+        background-color: aliceblue;
+        position: absolute;
+        bottom: 0;
+        left: 30px;
+        border-radius: 20px;
+    }
+
+    .circle_r {
+        height: 150px;
+        width: 150px;
+        border-bottom: 5px solid transparent;
+        /* 扇形的颜色和大小 */
+        border-top: 5px solid transparent;
+        border-left: 5px solid #ffffff;
+        border-right: 5px solid transparent;
+        border-radius: 80px;
+        transform: rotate(0deg);
+        position: absolute;
+        top: 190px;
+        left: 160px;
+        animation-name: run;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+    }
+
+    .circle_l {
+        height: 150px;
+        width: 150px;
+        border-bottom: 5px solid transparent;
+        /* 扇形的颜色和大小 */
+        border-top: 5px solid transparent;
+        border-right: 5px solid #ffffff;
+        border-left: 5px solid transparent;
+        border-radius: 80px;
+        transform: rotate(0deg);
+        position: absolute;
+        top: 190px;
+        left: 190px;
+        animation-name: run_r;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+    }
+    #C2{
+        animation-name: run;
+        animation-duration: 1s;
+        animation-delay: 0.2s;
+        animation-iteration-count: infinite;
+    }
+    #C3{
+        animation-name: run;
+        animation-duration: 1s;
+        animation-delay: 0.3s;
+        animation-iteration-count: infinite;
+    }
+    #C5{
+        animation-name: run_r;
+        animation-duration: 1s;
+        animation-delay: 0.2s;
+        animation-iteration-count: infinite;
+    }
+    #C6{
+        animation-name: run_r;
+        animation-duration: 1s;
+        animation-delay: 0.3s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes run {
+        80% {
+            
+            scale: 1.2;
+            transform: translateX(-30px);
+            opacity: 0.1;
+        }
+
+        100% {
+            scale: 1.5;
+            transform: translateX(-40px);
+            opacity: 0;
+        }
+    }
+    @keyframes run_r {
+        80% {
+            
+            scale: 1.2;
+            transform: translateX(30px);
+            opacity: 0.1;
+        }
+
+        100% {
+            scale: 1.5;
+            transform: translateX(40px);
+            opacity: 0;
+        }
+    }
+</style>
+
+<body>
+    <div class="Box">
+        <div class="small_box">
+            <div class="box_header"></div>
+            <div class="box_body"></div>
+            <div class="box_body_bt"></div>
+            <div class="box_bottom"></div>
+        </div>
+        <!--z -->
+        <div class="circle_r" id="C1"></div>
+        <div class="circle_r" id="C2"></div>
+        <div class="circle_r" id="C3"></div>
+        <!-- y -->
+        <div class="circle_l" id="C4"></div>
+        <div class="circle_l" id="C5"></div>
+        <div class="circle_l" id="C6"></div>
+    </div>
+
+</body>
+
+</html>

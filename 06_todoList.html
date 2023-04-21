@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+
+    .Box {
+        width: 500px;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to right, #fcc579 0%, #f4e383 100%);
+    }
+
+    .Form {
+        width: 300px;
+        height: 350px;
+        position: relative;
+        background-color: aliceblue;
+    }
+
+    .Table {
+        width: 270px !important;
+        height: 350px;
+
+    }
+
+    .Table_ul {
+        list-style: none;
+        text-align: center;
+    }
+
+    .Table_li {
+        margin-top: 25px;
+        margin-bottom: 8px;
+    }
+
+    .table_ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .table_li {
+        width: 150px !important;
+        height: 40px;
+        margin-top: 10px;
+        text-align: center;
+        line-height: 40px;
+        position: relative;
+        margin-bottom: -5px;
+    }
+
+    .li_h {
+        color: rgb(96, 121, 134);
+        font-weight: normal;
+
+    }
+
+    .active {
+        color: rgb(180, 180, 180);
+        font-weight: normal;
+        text-decoration: line-through;
+    }
+
+    .radio {
+        width: 15px;
+        height: 15px;
+        border: solid 1px rgb(92, 123, 138);
+        border-radius: 15px;
+        position: absolute;
+        z-index: 5;
+        right: 28px;
+        top: 10px;
+    }
+
+    @keyframes radio {
+        75% {
+            opacity: 0;
+            transform: scale(2);
+        }
+    }
+
+    .success {
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        right: 28px;
+        font-weight: bold;
+        color: rgb(129, 145, 153);
+        top: 0px;
+        display: none;
+
+    }
+
+    @keyframes success {
+        0% {
+            opacity: 0;
+        }
+    }
+</style>
+
+<body>
+    <div class="Box">
+        <div class="Form">
+            <table class="Table">
+                <ul class="Table_ul">
+                    <li class="Table_li">
+                        <h1 style="color: rgb(76, 96, 107);font-weight: normal;">Friday</h1>
+                    </li>
+                    <li style="padding-bottom: 35px;border-bottom: 1px solid rgb(116, 145, 160) ;">
+                        <h4 style="color: rgb(92, 117, 130);font-weight: lighter;">March 3,2023</h4>
+                    </li>
+                    <li>
+                        <ul class="table_ul">
+                            <li class="table_li">
+                                <h4 style="width: 150px;" class="li_h">完成第一个任务</h4>
+                            </li>
+                            <li class="table_li">
+                                <div class="radio"></div>
+                                <div class="success">✔</div>
+                            </li>
+                            <li class="table_li">
+                                <h4 class="li_h">完成第二个任务</h4>
+                            </li>
+                            <li class="table_li">
+                                <div class="radio"></div>
+                                <div class="success">✔</div>
+                            </li>
+                            <li class="table_li">
+                                <h4 class="li_h">完成第三个任务</h4>
+                            </li>
+                            <li class="table_li">
+                                <div class="radio"></div>
+                                <div class="success">✔</div>
+                            </li>
+                            <li class="table_li">
+                                <h4 class="li_h">完成第四个任务</h4>
+                            </li>
+                            <li class="table_li">
+                                <div class="radio"></div>
+                                <div class="success">✔</div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </table>
+        </div>
+    </div>
+</body>
+<script>
+
+    let radio = document.querySelectorAll('.radio');
+    let Lh = document.querySelectorAll('.li_h');
+    let success = document.querySelectorAll('.success');
+    for (let i = 0; i < radio.length; i++) {
+        radio[i].addEventListener('click', () => {
+            radio[i].style['animation-name'] = 'radio'
+            radio[i].style['animation-duration'] = '1s'
+            console.log(Lh[i]);
+            Lh[i].style['animation-name'] = 'success'
+            Lh[i].style['animation-duration'] = '2s'
+            radio[i].style.display = 'none'
+            Lh[i].className = 'active'
+            success[i].style['animation-name'] = 'success'
+            success[i].style['animation-duration'] = '2s'
+            success[i].style.display = 'block'
+        })
+
+    }
+
+</script>
+
+</html>
