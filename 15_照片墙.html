@@ -9,137 +9,184 @@
 </head>
 <style>
     * {
-        padding: 0;
+        box-sizing: border-box;
         margin: 0;
+        padding: 0;
     }
-
-    body {
-        /* 1vw等于1%的屏幕宽 */
+    body{
         width: 100vw;
         height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
-        position: relative;
     }
-
-    .Frame {
-        width: 500px;
-        height: 500px;
-        display: flex;
-        align-items: center;
-        flex-flow: wrap;
-        justify-content: center;
-        position: relative;
-        background-color: rgb(255, 255, 255);
-    }
-
-    .Img {
-        width: 162px;
-        height: 162px;
-        margin-top: 2px;
-        margin-left: 4px;
+    .frame {
         position: absolute;
+        background-color: aqua;
+        width: 600px;
+        height: 600px;
+        margin-top: -200px;
+        margin-left: -200px;
+        border-radius: 2px;
+        box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        background: #fff;
+        color: #fff;
+        font-family: 'Open Sans', Helvetica, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
-    @keyframes active {
-        0% {
-            width: 164px;
-            height: 164px;
+
+    .pics {
+        /* padding: 2px; */
+        display: flex;
+        flex-wrap: wrap;
+        width: 600px !important;
+        height: 600px !important;
+        position: relative;
+        grid-template-columns: 130px 130px 130px;
+        grid-template-rows: 130px 130px 130px;
+        justify-content: space-between;
+        align-content: space-between;
+        .pic {
+            cursor: pointer;
+            background: #f7f7f7;
         }
-        50%{
-            width: 400px;
-            height: 400px;
-            
-        }
-        100% {
-            width: 500px;
-            height: 500px;
-            left: 0px;
-            top: 0px;
+
+        img {
+            width:200px !important;
+            height: 200px !important;
         }
     }
 
-    #img_01 {
-        left: 1px;
-        top: 1px;
+
+    .pic:nth-child(1) {
+        transform-origin: left top;
+        
     }
-    #img_02 {
-        left: 167px;
-        top: 1px;
+
+    .pic:nth-child(2) {
+        transform-origin: top;
     }
-    #img_03 {
-        right: 1px;
-        top: 1px;
+
+    .pic:nth-child(3) {
+        transform-origin: top right;
     }
-    #img_04 {
-        left: 1px;
-        top: 167px;
+
+    .pic:nth-child(4) {
+        transform-origin: left;
     }
-    #img_05 {
-        left: 167px;
-        top: 167px;
+
+    .pic:nth-child(5) {
+        transform-origin: center;
     }
-    #img_06 {
-        right: 1px;
-        top: 167px;
+
+    .pic:nth-child(6) {
+        transform-origin: right;
     }
-    #img_07 {
-        left: 1px;
-        bottom: 1px;
+
+    .pic:nth-child(7) {
+        transform-origin: bottom left;
     }
-    #img_08 {
-        left: 167px;
-        bottom: 1px;
+
+    .pic:nth-child(8) {
+        transform-origin: bottom;
     }
-    #img_09 {
-        right: 1px;
-        bottom: 1px;
+
+    .pic:nth-child(9) {
+        transform-origin: bottom right;
+    }
+
+    .img-large {
+        animation: img-large 1s forwards;
+    }
+
+    .img-small {
+        animation: img-small 1s backwards;
+    }
+
+
+    @keyframes img-large {
+        0% {
+            transform: scale(1);
+            z-index: 1;
+        }
+
+        100% {
+            transform: scale(3.1);
+            z-index: 100;
+
+        }
+    }
+
+    @keyframes img-small {
+        0% {
+            transform: scale(3.1);
+            z-index: 100;
+        }
+
+        100% {
+            transform: scale(1);
+            z-index: 1;
+
+        }
     }
 </style>
 
 <body>
-    <div class="Frame">
-
-        <div><img class="Img" id="img_01"
-                src="https://ts1.cn.mm.bing.net/th/id/R-C.fc98329fee94d763cf925605eb129a13?rik=dn2mqHEq7uXHBg&riu=http%3a%2f%2fuploadfile.bizhizu.cn%2f2015%2f0325%2f20150325033001550.jpg&ehk=S%2ffwmKAZdaB5qTA6UeR3hXMglFnvL6U8LPVVAK8OMi4%3d&risl=&pid=ImgRaw&r=0" />
-        </div>
-        <div><img class="Img" id="img_02"
-                src="https://tse2-mm.cn.bing.net/th/id/OIP-C.fH6zOFYYapEMC8fDgBNnkQHaEo?pid=ImgDet&rs=1" /> </div>
-        <div><img class="Img" id="img_03"
-                src="https://tse2-mm.cn.bing.net/th/id/OIP-C.kM6Iqy9nlv9TaGi2G4nwEwHaEo?pid=ImgDet&rs=1" /></div>
-
-        <div><img class="Img" id="img_04"
-                src="https://ts1.cn.mm.bing.net/th/id/R-C.b49958807195a8d1c424fde143bc2fbd?rik=EerTxkQk4QITEQ&riu=http%3a%2f%2fwww.kutoo8.com%2fupload%2fimage%2f15405662%2f139-150419110958.jpg&ehk=76U32KgDGqzdD%2bnCEDJoTSKpth3SfF%2fLWs7uTOGabzA%3d&risl=&pid=ImgRaw&r=0" />
-        </div>
-        <div><img class="Img" id="img_05"
-                src="https://ts1.cn.mm.bing.net/th/id/R-C.88559e8a07c77e65ce1992cb62932515?rik=bV%2bwpbpLUkLAHA&riu=http%3a%2f%2fimg.mm4000.com%2ffile%2f6%2fb5%2f6c00580ec0.jpg&ehk=ao%2f%2fyE7%2bux0Faaw6bb7GHsmexeUFQjjIirmGnpWTzSY%3d&risl=&pid=ImgRaw&r=0" />
-        </div>
-        <div><img class="Img" id="img_06"
-                src="https://ts1.cn.mm.bing.net/th/id/R-C.5121cbbbce53e9ff321c5c11c730d93d?rik=fntYzIPUowg%2faQ&riu=http%3a%2f%2fpic.sucaibar.com%2fpic%2f201306%2f26%2f0c9680d510.jpg&ehk=CAPH1YheTfaJC9mlXZ6UrkKl2vDNUgGSsqMMkygUDfg%3d&risl=&pid=ImgRaw&r=0" />
-        </div>
-
-        <div><img class="Img" id="img_07"
-                src="https://tse1-mm.cn.bing.net/th/id/OIP-C.N54pqVy5ymD3gSoHNubLpAHaGI?pid=ImgDet&rs=1" /></div>
-        <div><img class="Img" id="img_08"
-                src="https://ts1.cn.mm.bing.net/th/id/R-C.79ab58ab9d874dff58b8948e0da07c5b?rik=Yjw1SP34yHOEbw&riu=http%3a%2f%2fpic9.nipic.com%2f20100814%2f4527529_125542008151_2.jpg&ehk=TN1jVCDbrnGHi30swId5AsI9BUVKg69rLucxiZw3M%2bU%3d&risl=&pid=ImgRaw&r=0" />
-        </div>
-        <div><img class="Img" id="img_09"
-                src="https://gss0.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/zhidao/wh%3D600%2C800/sign=d28c8a4e083387449c90277a613ff5c1/728da9773912b31b94f919378218367adab4e113.jpg" />
+    <div class="frame">
+        <div class="pics">
+            <div class="pic pic-1">
+                <img src="https://ts1.cn.mm.bing.net/th/id/R-C.fc98329fee94d763cf925605eb129a13?rik=dn2mqHEq7uXHBg&riu=http%3a%2f%2fuploadfile.bizhizu.cn%2f2015%2f0325%2f20150325033001550.jpg&ehk=S%2ffwmKAZdaB5qTA6UeR3hXMglFnvL6U8LPVVAK8OMi4%3d&risl=&pid=ImgRaw&r=0"
+                    alt="" style="width: 200px;height: 200px;" />
+            </div>
+            <div class="pic pic-2">
+                <img style="width: 200px;height: 200px;" src="https://tse2-mm.cn.bing.net/th/id/OIP-C.fH6zOFYYapEMC8fDgBNnkQHaEo?pid=ImgDet&rs=1" alt="" />
+            </div>
+            <div class="pic pic-3">
+                <img style="width: 200px;height: 200px;" src="https://tse2-mm.cn.bing.net/th/id/OIP-C.kM6Iqy9nlv9TaGi2G4nwEwHaEo?pid=ImgDet&rs=1" alt="" />
+            </div>
+            <div class="pic pic-4">
+                <img  style="width: 200px;height: 200px;" src="https://ts1.cn.mm.bing.net/th/id/R-C.0dee2228031e4ef5b03d0c5734aef866?rik=BD%2bnjbFbllVmEQ&riu=http%3a%2f%2fimg.zcool.cn%2fcommunity%2f01cf02554336f10000019ae9df1dad.jpg%403000w_1l_2o_100sh.jpg&ehk=zvcYgjHlqK2U2x9ploUbmiBIk7BewUd6lyA0AIswegQ%3d&risl=&pid=ImgRaw&r=0"
+                    alt="" />
+            </div>
+            <div class="pic pic-5">
+                <img style="width: 200px;height: 200px;" src="https://ts1.cn.mm.bing.net/th/id/R-C.88559e8a07c77e65ce1992cb62932515?rik=bV%2bwpbpLUkLAHA&riu=http%3a%2f%2fimg.mm4000.com%2ffile%2f6%2fb5%2f6c00580ec0.jpg&ehk=ao%2f%2fyE7%2bux0Faaw6bb7GHsmexeUFQjjIirmGnpWTzSY%3d&risl=&pid=ImgRaw&r=0"
+                    alt="" />
+            </div>
+            <div class="pic pic-6">
+                <img style="width: 200px;height: 200px;" src="https://ts1.cn.mm.bing.net/th/id/R-C.5121cbbbce53e9ff321c5c11c730d93d?rik=fntYzIPUowg%2faQ&riu=http%3a%2f%2fpic.sucaibar.com%2fpic%2f201306%2f26%2f0c9680d510.jpg&ehk=CAPH1YheTfaJC9mlXZ6UrkKl2vDNUgGSsqMMkygUDfg%3d&risl=&pid=ImgRaw&r=0"
+                    alt="" />
+            </div>
+            <div class="pic pic-7">
+                <img style="width: 200px;height: 200px;"  src="https://tse1-mm.cn.bing.net/th/id/OIP-C.N54pqVy5ymD3gSoHNubLpAHaGI?pid=ImgDet&rs=1" alt="" />
+            </div>
+            <div class="pic pic-8">
+                <img style="width: 200px;height: 200px;" src="https://ts1.cn.mm.bing.net/th/id/R-C.79ab58ab9d874dff58b8948e0da07c5b?rik=Yjw1SP34yHOEbw&riu=http%3a%2f%2fpic9.nipic.com%2f20100814%2f4527529_125542008151_2.jpg&ehk=TN1jVCDbrnGHi30swId5AsI9BUVKg69rLucxiZw3M%2bU%3d&risl=&pid=ImgRaw&r=0"
+                    alt="" />
+            </div>
+            <div class="pic pic-9">
+                <img style="width: 200px;height: 200px;" src="https://gss0.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/zhidao/wh%3D600%2C800/sign=d28c8a4e083387449c90277a613ff5c1/728da9773912b31b94f919378218367adab4e113.jpg"
+                    alt="" />
+            </div>
         </div>
     </div>
 </body>
 <script>
-    let Img = document.querySelectorAll('.Img');
-    console.log(Img);
-    for(let i =0 ;i<Img.length;i++){
-        Img[i].addEventListener('click',()=>{
-            Img[i].style['z-index']='999'
-            Img[i].style['animation']='active 2s '
-            Img[i].style['animation-fill-mode']='forwards'
-            Img[i].addEventListener('click',()=>{
-                Img[i].style['animation-fill-mode']='backwards'
-            })
-        })
+
+    const img = document.querySelectorAll('.pic');
+    for (let i = 0; i < img.length; i++) {
+        img[i].onclick = () => {
+            img[i].classList.add('img-large');
+            if (img[i].classList.contains('img-large')) {
+                img[i].onclick = () => {
+                    img[i].classList.add('img-small');
+                    img[i].classList.remove('img-large');
+                }
+            }
+        }
     }
+
 </script>
+
 </html>

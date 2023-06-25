@@ -18,34 +18,38 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        align-content: space-between;
         overflow-x: hidden;
+        margin: 0 auto;
     }
       /* 定义滚动条样式 */
-      .Box::-webkit-scrollbar {
-    width: 5px;
+  iframe::-webkit-scrollbar {
+    width: 1px;
     height: 6px;
     background-color: rgba(240, 240, 240, 0.1);
   }
   /*定义滚动条轨道 内阴影+圆角*/
-  .Box::-webkit-scrollbar-track {
+  iframe::-webkit-scrollbar-track {
     box-shadow: inset 0 0 0px rgba(240, 240, 240, .5);
     border-radius: 10px;
     background-color: rgba(240, 240, 240, .5);
   }
   /*定义滑块 内阴影+圆角*/
-  .Box::-webkit-scrollbar-thumb {
+  iframe::-webkit-scrollbar-thumb {
     border-radius: 18px !important;
     box-shadow: inset 0 0 0px rgba(240, 240, 240, .5) !important;
-    background-color: rgba(72, 148, 198, 0.2 );
+    background-color: rgba(169, 218, 250, 0.2);
   }
     .frame{
-        width: 50%;
-        height: 90%;
-        
+        width: 800px;
+        height: 800px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     iframe{
-        width: 100%;
-        height: 100%;
+        width: 600px;
+        height: 600px;
         overflow: hidden;
         overflow-y: hidden;
         overflow-x: hidden;
@@ -67,13 +71,12 @@
         <div class="frame"><iframe src="./13_动态轮播.html" frameborder="0"></iframe></div>
         <div class="frame"><iframe src="./14_文字行显示.html" frameborder="0"></iframe></div>
         <div class="frame"><iframe src="./01_train.html" frameborder="0" ></iframe></div>
-        <div class="frame"><iframe src="./02_点击按钮效果.html" frameborder="0" ></iframe></div>
         <div class="frame"><iframe src="./03_按钮效果.html" frameborder="0"></iframe></div>
         <div class="frame"><iframe src="./16_警告弹窗.html" frameborder="0"></iframe></div>
         <div class="frame"><iframe src="./18_发光灯泡.html" frameborder="0"></iframe></div>
-	  <div class="frame"><iframe src="./06_todoList.html" frameborder="0"></iframe></div>
-        <div class="frame"><iframe src="./17_爱心跳动.html" frameborder="0"></iframe></div>
-        <div class="frame"><iframe src="./15_照片墙.html" frameborder="0"></iframe></div>
+	    <div class="frame"><iframe src="./06_todoList.html" frameborder="0"></iframe></div>
+        <div class="frame"><iframe src="./17_旋转小圆点.html" frameborder="0" style="width: 500PX;height: 500PX;"></iframe></div>
+        <div class="frame"><iframe src="./15_照片墙.html" frameborder="0" style="width: 800PX;height: 800PX;" ></iframe></div>
         <div class="frame"><iframe src="./11_晴空万里.html" frameborder="0"></iframe></div>
         
     </div>
